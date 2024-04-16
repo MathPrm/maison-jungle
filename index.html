@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison Jungle</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+
+        function Header() {
+            return (<h1>La maison jungle</h1>)
+        }
+
+        function Description() {
+            const text = "Ici achetez toutes les plantes dont vous avez toujours rêvé"
+            const emojis = "🤑🤑🤑"
+            return (<p>{ text.slice(0, 11) + emojis }</p>)
+        }
+
+        function Banner() {
+            const title = "la maison jungle"
+            return(<h1>{title.toUpperCase()}</h1>)
+        }
+        function Cart() {
+        let monsteraPrice = 8
+        let lierrePrice = 10
+        let bouquetPrice = 15
+        return(<div>
+            <h2>Panier</h2>
+            <ul>
+            <li>Monstera: {monsteraPrice} €</li>
+            <li>Lierre: {lierrePrice} €</li>
+            <li>bouquet: {bouquetPrice} €</li>
+            </ul>
+            Total: {monsteraPrice + lierrePrice + bouquetPrice} €
+            </div>)
+        }
+        ReactDOM.render(<div><Banner /><Cart /></div>, document.getElementById('root'))
+    </script>
+        
+</body>
+
+</html>
